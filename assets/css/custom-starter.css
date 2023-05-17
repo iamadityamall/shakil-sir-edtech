@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .section {
   margin: auto;
   padding: auto;
@@ -130,13 +133,331 @@
   font-weight: bold;
   font-size: 14px;
 }
+/*================================================================ */
+/* brain */
+
+.custom-info-container {
+  display: grid;
+  padding: 4rem 0;
+  background: #fffaf4;
+}
+
+.custom-info-container-main {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.custom-info-container-main-left {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.custom-info-container-main-box {
+  display: grid;
+  row-gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+.custom-info-container-main-right {
+  display: grid;
+}
+.custom-brain-img {
+  display: grid;
+}
+
+.custom-brain-img img {
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/*================================================================ */
+/* courses */
+.custom-courses-section {
+  display: grid;
+  padding-bottom: 5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.custom-courses-main {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.custom-courses-headingContainer {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.custom-courses-headingContainer h4 {
+  text-align: center;
+}
+
+.custom-courses-headingContainer span {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+  line-height: 3rem;
+}
+
+.custom-courses-courses-cardsContainer {
+  padding: 2rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  border-radius: 10px;
+}
+
+.custom-single-card {
+  background: #f9fbe7;
+  padding: 0.5rem;
+  display: grid;
+  border-radius: 10px;
+}
+
+.custom-single-card:hover {
+  transition: all 200ms ease-in-out;
+  transform: scale(1.02);
+  background: #d4adfc;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+.custom-single-card figure {
+  border-radius: 10px;
+  display: grid;
+  overflow: hidden;
+}
+
+.custom-single-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-single-card-info {
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+.custom-single-card-info p {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.custom-single-card-course {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+
+.custom-single-card-course p {
+  background: #a3f3eb;
+  border-radius: 5px;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.custom-single-card-course p:hover {
+  background: #fbd341;
+  transition: all 200ms ease-in-out;
+  color: white;
+}
+
+.custom-single-card-course i {
+  justify-self: center;
+}
+
+.custom-school-container {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.custom-school-heading {
+  display: grid;
+  justify-content: center;
+  row-gap: 1rem;
+}
+
+.custom-school-heading h1 {
+  text-align: center;
+}
+
+.custom-underline {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.custom-underline-div {
+  height: 3px;
+  width: 3rem;
+  background: red;
+}
+
+.custom-underline i {
+  font-size: 1.5rem;
+}
+
+.custom-school-mini-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.custom-school-mini-card {
+  display: grid;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-school-mini-card:hover .custom-overlay {
+  background: #e57c23;
+  transition: all 200ms ease-in-out;
+}
+
+.custom-school-mini-card figure {
+  display: grid;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.custom-school-mini-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-overlay p {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#custom-school-viewmore {
+  justify-self: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  background: #e57c23;
+  color: white;
+}
+
+#custom-school-viewmore:hover {
+  transition: all 200ms ease-in-out;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================ */
+
+/* school */
+.custom-school {
+  display: grid;
+  background: #f1f6f9;
+  padding: 5rem 0;
+}
+
+.custom-school-main {
+  display: grid;
+  row-gap: 1rem;
+}
+/* ======================================== */
+
+/* types of classes */
+.custom-school-cardContainer {
+  display: grid;
+  padding: 5rem 0 0 0;
+}
+.custom-school-cardContainer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.custom-school-singlecard {
+  display: grid;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+.custom-school-singlecard:hover {
+  transition: all 200ms ease-in-out;
+  transform: scale(1.03);
+}
+
+.custom-school-singlecard figure {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.custom-school-singlecard figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.custom-school-singlecard-info {
+  display: grid;
+  row-gap: 0.25rem;
+  padding-bottom: 0.25rem;
+  align-self: flex-end;
+}
+
+.custom-school-singlecard-info h6 {
+  color: #0c134f;
+}
+
+.custom-school-bold {
+  font-weight: bold;
+}
+.custom-school-singlecard-info span {
+  font-size: 12px;
+  color: gray;
+}
+.custom-school-singlecard-footer {
+  padding: 0.1rem 0.1rem 0.1rem 0;
+  border-top: 0.5px solid gray;
+  align-self: flex-end;
+}
+
+.custom-school-singlecard-footer a {
+  font-weight: bold;
+  font-size: 12px;
+  color: #e57c23;
+}
+/* ==================================== */
 
 /* tablet */
 @media screen and (min-width: 768px) {
   .section {
     width: 85vw;
-  }
-  .custom-footer {
   }
   .custom-footer-main {
     display: grid;
@@ -180,6 +501,22 @@
     color: white;
     border-radius: 10px;
   }
+  .custom-courses-courses-cardsContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .custom-school-mini-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .custom-school-cardContainer-container {
+    width: 60vw;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0rem;
+    column-gap: 2rem;
+  }
 }
 
 /* desktop */
@@ -207,10 +544,26 @@
     text-decoration: underline;
     text-underline-offset: 0.25rem;
   }
+  .custom-info-container-main {
+    display: grid;
+    row-gap: 0rem;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+  }
+  .custom-courses-courses-cardsContainer {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .custom-school-mini-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
 }
 
 /* huge */
-@media screen and (min-width: 1280px) {
-  .custom-footer {
+@media screen and (min-width: 1440px) {
+  .custom-courses-courses-cardsContainer {
+    grid-template-columns: repeat(8, 1fr);
   }
 }
