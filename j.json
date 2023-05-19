@@ -1,0 +1,1362 @@
+{
+  "openapi": "3.0.1",
+  "info": { "title": "OpenAPI definition", "version": "v0" },
+  "servers": [
+    { "url": "http://localhost:9990", "description": "Generated server url" }
+  ],
+  "paths": {
+    "/api/upload": {
+      "post": {
+        "tags": ["pdf-upload-controller"],
+        "operationId": "saveFileWithOutDc",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": ["file"],
+                "type": "object",
+                "properties": {
+                  "file": { "type": "string", "format": "binary" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/updateusertable": {
+      "post": {
+        "tags": ["update-user-controller"],
+        "operationId": "updateusertable",
+        "parameters": [
+          {
+            "name": "map",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/updatetfstatus": {
+      "post": {
+        "tags": ["tf-status-controller"],
+        "operationId": "updatetftable",
+        "parameters": [
+          {
+            "name": "map",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/updateswiftstatus": {
+      "post": {
+        "tags": ["swift-status-controller"],
+        "operationId": "updateswifttable",
+        "parameters": [
+          {
+            "name": "map",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/updateclmsstatus": {
+      "post": {
+        "tags": ["clms-status-controller"],
+        "operationId": "updatetable",
+        "parameters": [
+          {
+            "name": "map",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/tradefinance": {
+      "post": {
+        "tags": ["create-tf-work-id-controller"],
+        "operationId": "createWorkId",
+        "parameters": [
+          {
+            "name": "tfBean",
+            "in": "query",
+            "required": true,
+            "schema": { "$ref": "#/components/schemas/CustomTfBean" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "beneficiaryConsentFile",
+                  "deviationApprovalsFile",
+                  "guaranteeAmendumFile",
+                  "marginFDReceiptFile",
+                  "othersFile"
+                ],
+                "type": "object",
+                "properties": {
+                  "beneficiaryConsentFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "deviationApprovalsFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "guaranteeAmendumFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "marginFDReceiptFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "othersFile": { "type": "string", "format": "binary" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/swift": {
+      "post": {
+        "tags": ["create-swift-work-id-controller"],
+        "operationId": "createWorkId_1",
+        "parameters": [
+          {
+            "name": "swiftBean",
+            "in": "query",
+            "required": true,
+            "schema": { "$ref": "#/components/schemas/CustomSwiftBean" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": ["file", "fileTwo"],
+                "type": "object",
+                "properties": {
+                  "file": { "type": "string", "format": "binary" },
+                  "fileTwo": { "type": "string", "format": "binary" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/postData": {
+      "post": {
+        "tags": ["test-controller"],
+        "operationId": "postData",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "age",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/postDataTwo": {
+      "post": {
+        "tags": ["test-controller"],
+        "operationId": "postDataTwo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": { "type": "string" }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/clms": {
+      "post": {
+        "tags": ["create-clms-work-id-controller"],
+        "operationId": "createWorkId_2",
+        "parameters": [
+          {
+            "name": "clmsBean",
+            "in": "query",
+            "required": true,
+            "schema": { "$ref": "#/components/schemas/BeanToken" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": ["file"],
+                "type": "object",
+                "properties": {
+                  "file": { "type": "string", "format": "binary" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/testfile": {
+      "get": {
+        "tags": ["test-controller"],
+        "operationId": "test",
+        "parameters": [
+          {
+            "name": "file",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string", "format": "binary" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/test": {
+      "get": {
+        "tags": ["test-controller"],
+        "operationId": "test_1",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/searchUserName": {
+      "get": {
+        "tags": ["search-user-controller"],
+        "operationId": "searchUser",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/moveFiles": {
+      "get": {
+        "tags": ["move-files-to-temp-folder-controller"],
+        "operationId": "moveFilesToTemp",
+        "parameters": [
+          {
+            "name": "folderName",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "fileName",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/getDetails": {
+      "get": {
+        "tags": ["auto-populate-details-controller"],
+        "operationId": "getAllDetails",
+        "parameters": [
+          {
+            "name": "workIdString",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/getAllDirectories/{subfolderOne}": {
+      "get": {
+        "tags": ["list-directories-controller"],
+        "operationId": "getAllDirectories",
+        "parameters": [
+          {
+            "name": "subfolderOne",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/getAllDirectories/{subfolderOne}/{subfolderTwo}": {
+      "get": {
+        "tags": ["list-directories-controller"],
+        "operationId": "getAllDirectories_1",
+        "parameters": [
+          {
+            "name": "subfolderOne",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "subfolderTwo",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/getAllDirectories/{subfolderOne}/{subfolderTwo}/{subfolderThree}": {
+      "get": {
+        "tags": ["list-directories-controller"],
+        "operationId": "getAllDirectories_2",
+        "parameters": [
+          {
+            "name": "subfolderOne",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "subfolderTwo",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "subfolderThree",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/getAllDirectories": {
+      "get": {
+        "tags": ["list-directories-controller"],
+        "operationId": "getAllDirectories_3",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/files/{option}/workId/{optionOne}": {
+      "get": {
+        "tags": ["list-files-controller"],
+        "operationId": "getAllFilesOfDirectory",
+        "parameters": [
+          {
+            "name": "option",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "optionOne",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/download/{option}/workId/{optionOne}/{fileName}": {
+      "get": {
+        "tags": ["pdf-upload-controller"],
+        "operationId": "downloadFile",
+        "parameters": [
+          {
+            "name": "option",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "optionOne",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "fileName",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/download/{grandparent}/{parent}/{child}/{fileName}": {
+      "get": {
+        "tags": ["download-pdf-controller"],
+        "operationId": "downloadFile_1",
+        "parameters": [
+          {
+            "name": "grandparent",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "parent",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "child",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "fileName",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/download/{fileName}": {
+      "get": {
+        "tags": ["download-pdf-controller"],
+        "operationId": "downloadFile_2",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/download/temp/{fileName}": {
+      "get": {
+        "tags": ["pdf-upload-controller"],
+        "operationId": "downloadFile_3",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/dashboard": {
+      "get": {
+        "tags": ["redirect-controller"],
+        "operationId": "getAuthorisationCode",
+        "parameters": [
+          {
+            "name": "map",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": { "$ref": "#/components/schemas/RedirectView" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cloud/searchFolder": {
+      "get": {
+        "tags": ["search-directory-in-cloud-controller"],
+        "operationId": "searchDirectory",
+        "parameters": [
+          {
+            "name": "foldername",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "*/*": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustomTfBean": {
+        "type": "object",
+        "properties": {
+          "listFile": {
+            "type": "array",
+            "items": { "type": "string", "format": "binary" }
+          },
+          "finacleReferenceNumber": { "type": "string" },
+          "registrationNumber": { "type": "string" },
+          "uniqueReferenceNumber": { "type": "string" },
+          "productCategory": { "type": "string" },
+          "productType": { "type": "string" },
+          "branchSolID": { "type": "string" },
+          "tfLocationSolID": { "type": "string" },
+          "ctpcSolID": { "type": "string" },
+          "checkerId": { "type": "string" },
+          "checkerEmail": { "type": "string" },
+          "makerId": { "type": "string" },
+          "accountNumber": { "type": "string" },
+          "customerName": { "type": "string" },
+          "customerID": { "type": "string" },
+          "telephoneNumber": { "type": "string" },
+          "email": { "type": "string" },
+          "contactPerson": { "type": "string" },
+          "category": { "type": "string" },
+          "vertical": { "type": "string" },
+          "constitution": { "type": "string" },
+          "accountSolID": { "type": "string" },
+          "debitCreditAccountID": { "type": "string" },
+          "mobileNumber": { "type": "string" },
+          "limitID1": { "type": "string" },
+          "limitID2": { "type": "string" },
+          "address": { "type": "string" },
+          "ieRefNo": { "type": "string" },
+          "tradeCustomerFlag": { "type": "string" },
+          "beneficiaryOtherPartyName": { "type": "string" },
+          "beneficiaryOtherPartyCountry": { "type": "string" },
+          "beneficiaryOtherPartyBankName": { "type": "string" },
+          "beneficiaryOtherPartyBankCountry": { "type": "string" },
+          "beneficiaryOtherPartyAddress": { "type": "string" },
+          "beneficiaryOtherPartyBankAddress": { "type": "string" },
+          "beneficiaryOtherPartyAccoutNumber": { "type": "string" },
+          "chargesRecoverableAccount": { "type": "string" },
+          "bgCurrency": { "type": "string" },
+          "bgAmount": { "type": "string" },
+          "bgNumber": { "type": "string" },
+          "revisedBgValue": { "type": "string" },
+          "bgAmendementRequest": { "type": "string" },
+          "additionalMarginReqd": { "type": "string" },
+          "revisedBgExpiryDt": { "type": "string" },
+          "revisedBgClaimExpiryDt": { "type": "string" },
+          "deferralStatus": { "type": "string" },
+          "deferralReason": { "type": "string" },
+          "deferralDate": { "type": "string" },
+          "documentRecieveDate": { "type": "string" },
+          "modOfReceipt": { "type": "string" },
+          "tradeOne": { "type": "string" },
+          "creditInfoReferenceNo": { "type": "string" },
+          "previousUserNotes": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      },
+      "CustomSwiftBean": {
+        "type": "object",
+        "properties": {
+          "work_id": { "type": "string" },
+          "dept_id": { "type": "string" },
+          "remakrs": { "type": "string" },
+          "dept_name": { "type": "string" },
+          "del_flg": { "type": "string" },
+          "last_updated_date": { "type": "string", "format": "date-time" },
+          "num_of_files": { "type": "integer", "format": "int32" },
+          "files": {
+            "type": "array",
+            "items": { "type": "string", "format": "binary" }
+          },
+          "finacleReferenceNumber": { "type": "string" },
+          "registrationNumber": { "type": "string" },
+          "uniqueReferenceNumber": { "type": "string" },
+          "productCategory": { "type": "string" },
+          "productType": { "type": "string" },
+          "branchSolID": { "type": "string" },
+          "tfLocationSolID": { "type": "string" },
+          "ctpcSolID": { "type": "string" },
+          "checkerEmail": { "type": "string" },
+          "checkerId": { "type": "string" },
+          "makerId": { "type": "string" },
+          "initiate_Transaction": { "type": "string" },
+          "initiate_TransactionTwo": { "type": "string" },
+          "identifier_Code": { "type": "string" },
+          "value_date": { "type": "string" },
+          "currency": { "type": "string" },
+          "interbank_settled_Account": { "type": "string" },
+          "exchange_Rate": { "type": "string" },
+          "address": { "type": "string" },
+          "address2": { "type": "string" },
+          "city": { "type": "string" },
+          "province": { "type": "string" },
+          "postal_Code": { "type": "string" },
+          "currency_Code": { "type": "string" },
+          "fedwire_Number": { "type": "string" },
+          "party_Identifier": { "type": "string" },
+          "address3": { "type": "string" },
+          "address4": { "type": "string" },
+          "city2": { "type": "string" },
+          "province2": { "type": "string" },
+          "postal_Code2": { "type": "string" },
+          "party_Identifier2": { "type": "string" },
+          "identifier_Code2": { "type": "string" },
+          "waive_Charges": { "type": "string" },
+          "remittance_Info": { "type": "string" },
+          "bank_Operation_Code": { "type": "string" },
+          "cheque_Number": { "type": "string" },
+          "support_documents": { "type": "string" },
+          "dummy1": { "type": "string" },
+          "dummy2": { "type": "string" },
+          "dummy3": { "type": "string" },
+          "dummy4": { "type": "string" },
+          "dummy5": { "type": "string" },
+          "dummy6": { "type": "string" },
+          "account_Number": { "type": "string" },
+          "deal_Id": { "type": "string" },
+          "account_Number2": { "type": "string" },
+          "sort_Code": { "type": "string" }
+        }
+      },
+      "BeanToken": {
+        "type": "object",
+        "properties": {
+          "files": {
+            "type": "array",
+            "items": { "type": "string", "format": "binary" }
+          },
+          "finacleReferenceNumber": { "type": "string" },
+          "registrationNumber": { "type": "string" },
+          "uniqueReferenceNumber": { "type": "string" },
+          "productCategory": { "type": "string" },
+          "productType": { "type": "string" },
+          "branchSolID": { "type": "string" },
+          "tfLocationSolID": { "type": "string" },
+          "ctpcSolID": { "type": "string" },
+          "customerName": { "type": "string" },
+          "beneficiaryTitle": { "type": "string" },
+          "beneficiaryName1": { "type": "string" },
+          "beneficiaryName2": { "type": "string" },
+          "addressLine1": { "type": "string" },
+          "stateLGDCode": { "type": "string" },
+          "districtLGDCode": { "type": "string" },
+          "blockCode": { "type": "string" },
+          "villageCode": { "type": "string" },
+          "countryCode": { "type": "string" },
+          "pinCode": { "type": "string" },
+          "gender": { "type": "string" },
+          "dateofBirth": { "type": "string" },
+          "mobileNo": { "type": "string" },
+          "email": { "type": "string" },
+          "bankName": { "type": "string" },
+          "bankId": { "type": "string" },
+          "bankAcctNumber": { "type": "string" },
+          "adharNo": { "type": "string" },
+          "checkerEmail": { "type": "string" },
+          "checkerId": { "type": "string" },
+          "makerId": { "type": "string" },
+          "affidavitCloudUploadFile": { "type": "string" },
+          "radioOption": { "type": "string" },
+          "searchFolderName": { "type": "string" }
+        }
+      },
+      "ApplicationContext": {
+        "type": "object",
+        "properties": {
+          "parent": { "$ref": "#/components/schemas/ApplicationContext" },
+          "id": { "type": "string" },
+          "displayName": { "type": "string" },
+          "autowireCapableBeanFactory": {
+            "$ref": "#/components/schemas/AutowireCapableBeanFactory"
+          },
+          "applicationName": { "type": "string" },
+          "startupDate": { "type": "integer", "format": "int64" },
+          "environment": { "$ref": "#/components/schemas/Environment" },
+          "beanDefinitionCount": { "type": "integer", "format": "int32" },
+          "beanDefinitionNames": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "parentBeanFactory": { "$ref": "#/components/schemas/BeanFactory" },
+          "classLoader": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "registeredAsParallelCapable": { "type": "boolean" },
+              "parent": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "registeredAsParallelCapable": { "type": "boolean" },
+                  "unnamedModule": {
+                    "type": "object",
+                    "properties": {
+                      "name": { "type": "string" },
+                      "classLoader": {
+                        "type": "object",
+                        "properties": {
+                          "name": { "type": "string" },
+                          "registeredAsParallelCapable": { "type": "boolean" },
+                          "definedPackages": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "name": { "type": "string" },
+                                "annotations": {
+                                  "type": "array",
+                                  "items": { "type": "object" }
+                                },
+                                "declaredAnnotations": {
+                                  "type": "array",
+                                  "items": { "type": "object" }
+                                },
+                                "sealed": { "type": "boolean" },
+                                "specificationTitle": { "type": "string" },
+                                "specificationVersion": { "type": "string" },
+                                "specificationVendor": { "type": "string" },
+                                "implementationTitle": { "type": "string" },
+                                "implementationVersion": { "type": "string" },
+                                "implementationVendor": { "type": "string" }
+                              }
+                            }
+                          },
+                          "defaultAssertionStatus": {
+                            "type": "boolean",
+                            "writeOnly": true
+                          }
+                        }
+                      },
+                      "descriptor": {
+                        "type": "object",
+                        "properties": {
+                          "open": { "type": "boolean" },
+                          "automatic": { "type": "boolean" }
+                        }
+                      },
+                      "named": { "type": "boolean" },
+                      "annotations": {
+                        "type": "array",
+                        "items": { "type": "object" }
+                      },
+                      "declaredAnnotations": {
+                        "type": "array",
+                        "items": { "type": "object" }
+                      },
+                      "packages": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": { "type": "string" }
+                      },
+                      "layer": { "type": "object" }
+                    }
+                  },
+                  "definedPackages": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": { "type": "string" },
+                        "annotations": {
+                          "type": "array",
+                          "items": { "type": "object" }
+                        },
+                        "declaredAnnotations": {
+                          "type": "array",
+                          "items": { "type": "object" }
+                        },
+                        "sealed": { "type": "boolean" },
+                        "specificationTitle": { "type": "string" },
+                        "specificationVersion": { "type": "string" },
+                        "specificationVendor": { "type": "string" },
+                        "implementationTitle": { "type": "string" },
+                        "implementationVersion": { "type": "string" },
+                        "implementationVendor": { "type": "string" }
+                      }
+                    }
+                  },
+                  "defaultAssertionStatus": {
+                    "type": "boolean",
+                    "writeOnly": true
+                  }
+                }
+              },
+              "unnamedModule": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "classLoader": {
+                    "type": "object",
+                    "properties": {
+                      "name": { "type": "string" },
+                      "registeredAsParallelCapable": { "type": "boolean" },
+                      "definedPackages": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "name": { "type": "string" },
+                            "annotations": {
+                              "type": "array",
+                              "items": { "type": "object" }
+                            },
+                            "declaredAnnotations": {
+                              "type": "array",
+                              "items": { "type": "object" }
+                            },
+                            "sealed": { "type": "boolean" },
+                            "specificationTitle": { "type": "string" },
+                            "specificationVersion": { "type": "string" },
+                            "specificationVendor": { "type": "string" },
+                            "implementationTitle": { "type": "string" },
+                            "implementationVersion": { "type": "string" },
+                            "implementationVendor": { "type": "string" }
+                          }
+                        }
+                      },
+                      "defaultAssertionStatus": {
+                        "type": "boolean",
+                        "writeOnly": true
+                      }
+                    }
+                  },
+                  "descriptor": {
+                    "type": "object",
+                    "properties": {
+                      "open": { "type": "boolean" },
+                      "automatic": { "type": "boolean" }
+                    }
+                  },
+                  "named": { "type": "boolean" },
+                  "annotations": {
+                    "type": "array",
+                    "items": { "type": "object" }
+                  },
+                  "declaredAnnotations": {
+                    "type": "array",
+                    "items": { "type": "object" }
+                  },
+                  "packages": {
+                    "uniqueItems": true,
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "layer": { "type": "object" }
+                }
+              },
+              "definedPackages": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "annotations": {
+                      "type": "array",
+                      "items": { "type": "object" }
+                    },
+                    "declaredAnnotations": {
+                      "type": "array",
+                      "items": { "type": "object" }
+                    },
+                    "sealed": { "type": "boolean" },
+                    "specificationTitle": { "type": "string" },
+                    "specificationVersion": { "type": "string" },
+                    "specificationVendor": { "type": "string" },
+                    "implementationTitle": { "type": "string" },
+                    "implementationVersion": { "type": "string" },
+                    "implementationVendor": { "type": "string" }
+                  }
+                }
+              },
+              "defaultAssertionStatus": { "type": "boolean", "writeOnly": true }
+            }
+          }
+        }
+      },
+      "AutowireCapableBeanFactory": { "type": "object" },
+      "BeanFactory": { "type": "object" },
+      "Environment": {
+        "type": "object",
+        "properties": {
+          "activeProfiles": { "type": "array", "items": { "type": "string" } },
+          "defaultProfiles": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "RedirectView": {
+        "type": "object",
+        "properties": {
+          "applicationContext": {
+            "$ref": "#/components/schemas/ApplicationContext"
+          },
+          "servletContext": {
+            "type": "object",
+            "properties": {
+              "classLoader": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "registeredAsParallelCapable": { "type": "boolean" },
+                  "definedPackages": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": { "type": "string" },
+                        "annotations": {
+                          "type": "array",
+                          "items": { "type": "object" }
+                        },
+                        "declaredAnnotations": {
+                          "type": "array",
+                          "items": { "type": "object" }
+                        },
+                        "sealed": { "type": "boolean" },
+                        "specificationTitle": { "type": "string" },
+                        "specificationVersion": { "type": "string" },
+                        "specificationVendor": { "type": "string" },
+                        "implementationTitle": { "type": "string" },
+                        "implementationVersion": { "type": "string" },
+                        "implementationVendor": { "type": "string" }
+                      }
+                    }
+                  },
+                  "defaultAssertionStatus": {
+                    "type": "boolean",
+                    "writeOnly": true
+                  }
+                }
+              },
+              "majorVersion": { "type": "integer", "format": "int32" },
+              "minorVersion": { "type": "integer", "format": "int32" },
+              "contextPath": { "type": "string" },
+              "responseCharacterEncoding": { "type": "string" },
+              "effectiveMinorVersion": { "type": "integer", "format": "int32" },
+              "virtualServerName": { "type": "string" },
+              "requestCharacterEncoding": { "type": "string" },
+              "servletContextName": { "type": "string" },
+              "effectiveMajorVersion": { "type": "integer", "format": "int32" },
+              "servletRegistrations": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "mappings": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "runAsRole": { "type": "string" },
+                    "name": { "type": "string" },
+                    "className": { "type": "string" },
+                    "initParameters": {
+                      "type": "object",
+                      "additionalProperties": { "type": "string" }
+                    }
+                  }
+                }
+              },
+              "sessionCookieConfig": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "path": { "type": "string" },
+                  "comment": { "type": "string" },
+                  "domain": { "type": "string" },
+                  "maxAge": { "type": "integer", "format": "int32" },
+                  "secure": { "type": "boolean" },
+                  "httpOnly": { "type": "boolean" }
+                }
+              },
+              "filterRegistrations": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "servletNameMappings": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "urlPatternMappings": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "name": { "type": "string" },
+                    "className": { "type": "string" },
+                    "initParameters": {
+                      "type": "object",
+                      "additionalProperties": { "type": "string" }
+                    }
+                  }
+                }
+              },
+              "sessionTrackingModes": {
+                "uniqueItems": true,
+                "type": "array",
+                "writeOnly": true,
+                "items": { "type": "string", "enum": ["COOKIE", "URL", "SSL"] }
+              },
+              "defaultSessionTrackingModes": {
+                "uniqueItems": true,
+                "type": "array",
+                "items": { "type": "string", "enum": ["COOKIE", "URL", "SSL"] }
+              },
+              "effectiveSessionTrackingModes": {
+                "uniqueItems": true,
+                "type": "array",
+                "items": { "type": "string", "enum": ["COOKIE", "URL", "SSL"] }
+              },
+              "initParameterNames": { "type": "object" },
+              "jspConfigDescriptor": {
+                "type": "object",
+                "properties": {
+                  "jspPropertyGroups": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "buffer": { "type": "string" },
+                        "defaultContentType": { "type": "string" },
+                        "urlPatterns": {
+                          "type": "array",
+                          "items": { "type": "string" }
+                        },
+                        "scriptingInvalid": { "type": "string" },
+                        "deferredSyntaxAllowedAsLiteral": { "type": "string" },
+                        "errorOnUndeclaredNamespace": { "type": "string" },
+                        "trimDirectiveWhitespaces": { "type": "string" },
+                        "pageEncoding": { "type": "string" },
+                        "elIgnored": { "type": "string" },
+                        "isXml": { "type": "string" },
+                        "includePreludes": {
+                          "type": "array",
+                          "items": { "type": "string" }
+                        },
+                        "includeCodas": {
+                          "type": "array",
+                          "items": { "type": "string" }
+                        }
+                      }
+                    }
+                  },
+                  "taglibs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "taglibURI": { "type": "string" },
+                        "taglibLocation": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              },
+              "servlets": { "type": "object", "deprecated": true },
+              "servletNames": { "type": "object", "deprecated": true },
+              "serverInfo": { "type": "string" },
+              "attributeNames": { "type": "object" },
+              "sessionTimeout": { "type": "integer", "format": "int32" }
+            },
+            "writeOnly": true
+          },
+          "contentType": { "type": "string" },
+          "requestContextAttribute": { "type": "string" },
+          "staticAttributes": {
+            "type": "object",
+            "additionalProperties": { "type": "object" }
+          },
+          "exposePathVariables": { "type": "boolean" },
+          "exposeContextBeansAsAttributes": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "exposedContextBeanNames": {
+            "type": "array",
+            "writeOnly": true,
+            "items": { "type": "string" }
+          },
+          "beanName": { "type": "string" },
+          "url": { "type": "string" },
+          "contextRelative": { "type": "boolean", "writeOnly": true },
+          "http10Compatible": { "type": "boolean", "writeOnly": true },
+          "exposeModelAttributes": { "type": "boolean", "writeOnly": true },
+          "encodingScheme": { "type": "string", "writeOnly": true },
+          "statusCode": {
+            "type": "string",
+            "writeOnly": true,
+            "enum": [
+              "100 CONTINUE",
+              "101 SWITCHING_PROTOCOLS",
+              "102 PROCESSING",
+              "103 CHECKPOINT",
+              "200 OK",
+              "201 CREATED",
+              "202 ACCEPTED",
+              "203 NON_AUTHORITATIVE_INFORMATION",
+              "204 NO_CONTENT",
+              "205 RESET_CONTENT",
+              "206 PARTIAL_CONTENT",
+              "207 MULTI_STATUS",
+              "208 ALREADY_REPORTED",
+              "226 IM_USED",
+              "300 MULTIPLE_CHOICES",
+              "301 MOVED_PERMANENTLY",
+              "302 FOUND",
+              "302 MOVED_TEMPORARILY",
+              "303 SEE_OTHER",
+              "304 NOT_MODIFIED",
+              "305 USE_PROXY",
+              "307 TEMPORARY_REDIRECT",
+              "308 PERMANENT_REDIRECT",
+              "400 BAD_REQUEST",
+              "401 UNAUTHORIZED",
+              "402 PAYMENT_REQUIRED",
+              "403 FORBIDDEN",
+              "404 NOT_FOUND",
+              "405 METHOD_NOT_ALLOWED",
+              "406 NOT_ACCEPTABLE",
+              "407 PROXY_AUTHENTICATION_REQUIRED",
+              "408 REQUEST_TIMEOUT",
+              "409 CONFLICT",
+              "410 GONE",
+              "411 LENGTH_REQUIRED",
+              "412 PRECONDITION_FAILED",
+              "413 PAYLOAD_TOO_LARGE",
+              "413 REQUEST_ENTITY_TOO_LARGE",
+              "414 URI_TOO_LONG",
+              "414 REQUEST_URI_TOO_LONG",
+              "415 UNSUPPORTED_MEDIA_TYPE",
+              "416 REQUESTED_RANGE_NOT_SATISFIABLE",
+              "417 EXPECTATION_FAILED",
+              "418 I_AM_A_TEAPOT",
+              "419 INSUFFICIENT_SPACE_ON_RESOURCE",
+              "420 METHOD_FAILURE",
+              "421 DESTINATION_LOCKED",
+              "422 UNPROCESSABLE_ENTITY",
+              "423 LOCKED",
+              "424 FAILED_DEPENDENCY",
+              "425 TOO_EARLY",
+              "426 UPGRADE_REQUIRED",
+              "428 PRECONDITION_REQUIRED",
+              "429 TOO_MANY_REQUESTS",
+              "431 REQUEST_HEADER_FIELDS_TOO_LARGE",
+              "451 UNAVAILABLE_FOR_LEGAL_REASONS",
+              "500 INTERNAL_SERVER_ERROR",
+              "501 NOT_IMPLEMENTED",
+              "502 BAD_GATEWAY",
+              "503 SERVICE_UNAVAILABLE",
+              "504 GATEWAY_TIMEOUT",
+              "505 HTTP_VERSION_NOT_SUPPORTED",
+              "506 VARIANT_ALSO_NEGOTIATES",
+              "507 INSUFFICIENT_STORAGE",
+              "508 LOOP_DETECTED",
+              "509 BANDWIDTH_LIMIT_EXCEEDED",
+              "510 NOT_EXTENDED",
+              "511 NETWORK_AUTHENTICATION_REQUIRED"
+            ]
+          },
+          "expandUriTemplateVariables": {
+            "type": "boolean",
+            "writeOnly": true
+          },
+          "propagateQueryParams": { "type": "boolean", "writeOnly": true },
+          "hosts": { "type": "array", "items": { "type": "string" } },
+          "propagateQueryProperties": { "type": "boolean" },
+          "redirectView": { "type": "boolean" },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": { "type": "string" },
+            "writeOnly": true
+          },
+          "attributesMap": {
+            "type": "object",
+            "additionalProperties": { "type": "object" }
+          },
+          "attributesCSV": { "type": "string", "writeOnly": true }
+        }
+      }
+    }
+  }
+}
