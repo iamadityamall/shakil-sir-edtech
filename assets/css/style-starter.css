@@ -19417,7 +19417,7 @@ p.banner-sub {
 
 .sub-banner-image img {
   position: absolute;
-  top: -162px;
+  top: -120px;
   right: 0px;
 }
 
@@ -19430,6 +19430,7 @@ p.banner-sub {
   background: var(--secondary-color);
   padding: 25px 30px;
   border-radius: 50%;
+  transform: translateX(-120px);
 }
 
 .banner-style-2 h4 {
