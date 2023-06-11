@@ -569,6 +569,89 @@
 
 /* ====================================== */
 
+/* new courses section */
+/* =============================================== */
+.custom-new-courses-section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.custom-new-courses-main {
+  display: grid;
+  row-gap: 4rem;
+}
+
+.custom-new-courses-webDevelopment {
+  display: grid;
+  padding: 1rem 3rem;
+  row-gap: 1rem;
+}
+
+.custom-new-courses-web-development {
+  display: grid;
+  padding: 1rem 3rem;
+  row-gap: 1rem;
+}
+.custom-new-courses-webDevelopment h3 {
+  text-decoration: underline;
+}
+
+.custom-new-courses-web-development h3 {
+  text-decoration: underline;
+}
+
+.webDevelopment-container {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-new-courses-singleCourse {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #faf4b7;
+  transition: all 200ms ease-in-out;
+}
+
+.custom-new-courses-singleCourse:hover {
+  background: #fdf4f5;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+.custom-new-courses-singleCourse figure {
+  width: 8rem;
+  height: 8rem;
+
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+}
+
+.custom-new-courses-singleCourse figure img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.custom-new-courses-singleCourse p {
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  font-size: 14px;
+}
+
 /* tablet */
 @media screen and (min-width: 768px) {
   .section {
