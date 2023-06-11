@@ -606,7 +606,7 @@
   display: grid;
   column-gap: 1rem;
   row-gap: 1rem;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
 }
@@ -743,6 +743,15 @@
     column-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .webDevelopment-container {
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* desktop */
@@ -788,6 +797,15 @@
   .custom-about-main-right video {
     border-radius: 10px;
     width: 600px;
+  }
+
+  .webDevelopment-container {
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-content: center;
   }
 }
 
